@@ -169,6 +169,37 @@
   }
 }
 
+/* Tab date — mobile: 10px/1px, desktop: 12px/1.8px */
+.tab-date {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: 10px;
+  line-height: var(--leading-none);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .tab-date {
+    font-size: var(--text-xs);
+    letter-spacing: 1.8px;
+  }
+}
+
+/* Tab title — mobile: 13px, desktop uses .detail */
+.tab-title {
+  font-family: var(--font-family);
+  font-size: 13px;
+  line-height: var(--leading-none);
+}
+
+@media (min-width: 768px) {
+  .tab-title {
+    font-size: var(--text-base);
+    letter-spacing: 0.8px;
+  }
+}
+
 /* Button text */
 .btn-text {
   font-family: var(--font-family);
@@ -235,8 +266,8 @@
 .speaker-role {
   font-family: var(--font-family);
   font-weight: var(--font-regular);
-  font-size: 0.75rem;
-  line-height: 1;
+  font-size: var(--text-xs);
+  line-height: var(--leading-none);
   letter-spacing: 0;
 }
 
@@ -251,13 +282,13 @@
   font-family: var(--font-family);
   font-weight: var(--font-medium);
   font-size: 11px;
-  line-height: 1;
+  line-height: var(--leading-none);
   letter-spacing: 0.55px;
 }
 
 @media (min-width: 768px) {
   .speaker-company {
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     letter-spacing: 0.7px;
   }
 }
