@@ -1,4 +1,5 @@
 import { getAbout } from "@/lib/api";
+import Divider from "./shared/Divider";
 
 export default async function About() {
   const about = await getAbout();
@@ -13,9 +14,9 @@ export default async function About() {
     <section className="bg-bg px-6 md:px-16 lg:px-32 xl:px-64 py-24 md:py-32">
       <span className="subheading text-accent">{about.label}</span>
 
-      <h2 className="h2-section text-text mt-4 max-w-3xl">{about.heading}</h2>
+      <h2 className="h2-section text-text mt-4 max-w-[800px]">{about.heading}</h2>
 
-      <div className="w-15 h-px bg-accent my-8" />
+      <Divider className="my-8" />
 
       <div className="flex flex-col md:flex-row gap-12 md:gap-16">
         <div className="body-text text-gray-700 max-w-lg whitespace-pre-line">

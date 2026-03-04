@@ -16,7 +16,7 @@ export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
         </div>
       )}
 
-      <h3 className="speaker-name text-white mt-4 mb-2">{speaker.name}</h3>
+      <h3 className="h3-small text-white mt-4 mb-2">{speaker.name}</h3>
 
       <p className="speaker-role text-gray-400 m-0">{speaker.role}</p>
 
