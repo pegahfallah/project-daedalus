@@ -22,7 +22,8 @@ export default async function Hero() {
 
       <div className="relative z-above w-full px-6 md:px-16 lg:px-32 xl:px-64 pb-16 md:pb-24 flex flex-col gap-6">
         <span className="subheading text-white/80">
-          {hero.subtitle}
+          <span className="md:hidden">Architecture Summit</span>
+          <span className="hidden md:inline">{hero.subtitle}</span>
         </span>
 
         <h1 className="h1-display text-white">

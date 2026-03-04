@@ -15,7 +15,7 @@ export default async function About() {
 
       <h2 className="h2-section text-text mt-4 max-w-3xl">{about.heading}</h2>
 
-      <div className="w-15 h-px bg-accent mt-8 mb-10" />
+      <div className="w-15 h-px bg-accent my-8" />
 
       <div className="flex flex-col md:flex-row gap-12 md:gap-16">
         <div className="body-text text-gray-700 max-w-lg whitespace-pre-line">

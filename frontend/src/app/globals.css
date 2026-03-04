@@ -214,6 +214,52 @@
   }
 }
 
+/* Speaker name — mobile: 18px, desktop: 24px */
+.speaker-name {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-regular);
+  font-size: var(--text-md);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  .speaker-name {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Speaker role — mobile: 12px, desktop: 15px */
+.speaker-role {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  .speaker-role {
+    font-size: 15px;
+  }
+}
+
+/* Speaker company — mobile: 11px/0.55px, desktop: 14px/0.7px */
+.speaker-company {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.55px;
+}
+
+@media (min-width: 768px) {
+  .speaker-company {
+    font-size: 0.875rem;
+    letter-spacing: 0.7px;
+  }
+}
+
 /* Nav link */
 .nav-link {
   font-family: var(--font-family);
