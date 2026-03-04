@@ -16,7 +16,7 @@ export default async function Programme() {
   }
 
   return (
-    <Section id="programme">
+    <Section id="schedule">
       <SectionHeader label={section.label} heading={section.heading} />
       <ProgrammeTabs days={days} />
     </Section>
