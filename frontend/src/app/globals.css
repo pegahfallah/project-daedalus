@@ -217,6 +217,24 @@
   }
 }
 
+/* Footer heading — mobile: 28px, desktop: 48px */
+.footer-heading {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-light);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-tight);
+  }
+}
+
 /* Body text — mobile: 15px, desktop: 17px */
 .body-text {
   font-family: var(--font-family);

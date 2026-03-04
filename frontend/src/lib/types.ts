@@ -12,5 +12,7 @@ export type ScheduleDay = components["schemas"]["ItemsScheduleDays"];
 export type ProgrammeSection = components["schemas"]["ItemsProgrammeSection"];
 export type PartnersSection = components["schemas"]["ItemsPartnersSection"];
 export type Partner = components["schemas"]["ItemsPartners"];
-export type Footer = components["schemas"]["ItemsFooter"];
+export type Footer = components["schemas"]["ItemsFooter"] & {
+  cta_text_mobile?: string | null;
+};
 export type Page = components["schemas"]["ItemsPages"];

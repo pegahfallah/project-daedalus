@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import {
+  SESSION_TYPE_COLORS,
+  SESSION_TYPE_COLOR_DEFAULT,
+} from "@/lib/constants";
 import type {
   ScheduleDay,
   Session,
@@ -42,15 +46,8 @@ function getSpeakerNames(session: Session): string {
     .join(", ");
 }
 
-const typeColors: Record<string, string> = {
-  keynote: "text-accent",
-  workshop: "text-type-workshop",
-  talk: "text-text-muted",
-  panel: "text-type-panel",
-};
-
 function getTypeColor(type: string | null | undefined): string {
-  return typeColors[type?.toLowerCase() ?? ""] ?? "text-text";
+  return SESSION_TYPE_COLORS[type?.toLowerCase() ?? ""] ?? SESSION_TYPE_COLOR_DEFAULT;
 }
 
 interface ProgrammeTabsProps {

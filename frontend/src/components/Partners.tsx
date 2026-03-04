@@ -1,16 +1,9 @@
 import Image from "next/image";
 import { getPartnersSection, getPartners } from "@/lib/api";
+import { TIER_ORDER, TIER_GRID_COLS } from "@/lib/constants";
 import { assetUrl } from "@/lib/directus";
 import type { Partner } from "@/lib/types";
 import SectionHeader from "./shared/SectionHeader";
-
-const tierOrder = ["gold", "silver", "bronze"] as const;
-
-const tierGridCols: Record<string, string> = {
-  gold: "grid-cols-1 md:grid-cols-2",
-  silver: "grid-cols-2 md:grid-cols-3",
-  bronze: "grid-cols-2 md:grid-cols-4",
-};
 
 export default async function Partners() {
   const [section, partners] = await Promise.all([
@@ -18,7 +11,7 @@ export default async function Partners() {
     getPartners(),
   ]);
 
-  const tiers = tierOrder
+  const tiers = TIER_ORDER
     .map((tier) => ({
       name: tier,
       partners: partners.filter(
@@ -38,7 +31,7 @@ export default async function Partners() {
               {tier.name} Partners
             </span>
 
-            <div className={`grid ${tierGridCols[tier.name]} gap-6 md:gap-8`}>
+            <div className={`grid ${TIER_GRID_COLS[tier.name]} gap-6 md:gap-8`}>
               {tier.partners.map((partner: Partner) => (
                 <a
                   key={partner.id}
