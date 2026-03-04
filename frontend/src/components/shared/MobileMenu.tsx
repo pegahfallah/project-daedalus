@@ -21,13 +21,13 @@ export default function MobileMenu({
         className="flex flex-col justify-center items-center w-8 h-8 gap-[6px] cursor-pointer bg-transparent border-none p-0"
       >
         <span
-          className={`block w-6 h-[2.5px] bg-text transition-transform duration-normal ease-in-out ${open ? "translate-y-[8.5px] rotate-45" : ""}`}
+          className={`block w-6 h-[2.5px] bg-text transition-transform duration-normal ease-brand-in-out ${open ? "translate-y-[8.5px] rotate-45" : ""}`}
         />
         <span
-          className={`block w-6 h-[2.5px] bg-text transition-opacity duration-normal ease-in-out ${open ? "opacity-0" : ""}`}
+          className={`block w-6 h-[2.5px] bg-text transition-opacity duration-normal ease-brand-in-out ${open ? "opacity-0" : ""}`}
         />
         <span
-          className={`block w-6 h-[2.5px] bg-text transition-transform duration-normal ease-in-out ${open ? "-translate-y-[8.5px] -rotate-45" : ""}`}
+          className={`block w-6 h-[2.5px] bg-text transition-transform duration-normal ease-brand-in-out ${open ? "-translate-y-[8.5px] -rotate-45" : ""}`}
         />
       </button>
 
@@ -38,7 +38,7 @@ export default function MobileMenu({
               key={item.id}
               href={item.url ?? "#"}
               onClick={() => setOpen(false)}
-              className="font-body text-sm font-medium tracking-wider uppercase text-text-secondary no-underline hover:text-text transition-colors duration-normal ease-in-out"
+              className="nav-link text-text-secondary no-underline hover:text-text transition-colors duration-normal ease-brand-in-out"
             >
               {item.label}
             </a>

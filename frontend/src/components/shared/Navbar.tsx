@@ -11,11 +11,11 @@ export default async function Navbar() {
   const cta = items.find((item: Navigation) => item.is_cta);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-nav w-full bg-white/92 backdrop-blur-sm border-b border-border px-6 md:px-16 lg:px-32 xl:px-64 transition-all duration-normal ease-in-out">
-      <div className="flex items-center justify-between h-[88px]">
+    <nav className="z-nav fixed top-0 left-0 right-0 w-full bg-bg/92 border-b border-border px-5 md:px-16 lg:px-32 xl:px-64 transition-all duration-normal ease-brand-in-out">
+      <div className="flex items-center justify-between h-[52px] md:h-[88px]">
         <Link
           href="/"
-          className="font-heading text-md font-semibold leading-none tracking-[3.6px] uppercase text-text no-underline whitespace-nowrap shrink-0"
+          className="logo-type text-text no-underline whitespace-nowrap shrink-0"
         >
           FORMA <span className="text-accent">2026</span>
         </Link>
@@ -25,7 +25,7 @@ export default async function Navbar() {
             <li key={item.id}>
               <a
                 href={item.url ?? "#"}
-                className="font-body text-sm font-medium tracking-wider uppercase text-text-secondary no-underline hover:text-text transition-colors duration-normal ease-in-out"
+                className="nav-link text-text-secondary no-underline hover:text-text transition-colors duration-normal ease-brand-in-out"
               >
                 {item.label}
               </a>

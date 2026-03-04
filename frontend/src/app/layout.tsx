@@ -28,8 +28,8 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Navbar />
-        <main className="pt-16">{children}</main>
+        <Navbar/>
+        <main>{children}</main>
       </body>
     </html>
   );

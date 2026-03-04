@@ -11,7 +11,7 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 px-8 py-3 font-body text-sm font-semibold tracking-wide uppercase no-underline border border-transparent cursor-pointer transition-colors duration-150";
+  "btn-text inline-flex items-center justify-center md:justify-start gap-2 px-8 py-4 no-underline border border-transparent cursor-pointer transition-colors duration-fast";
 
 const variants = {
   primary: "bg-accent text-bg hover:bg-accent-hover",
