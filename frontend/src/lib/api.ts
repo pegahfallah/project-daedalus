@@ -62,3 +62,8 @@ export function getFooter() {
 export function getPage() {
   return directusFetch<Page>("/items/pages");
 }
+
+export async function getSiteInfo() {
+  const hero = await directusFetch<Hero>("/items/hero");
+  return { dates: hero.dates, venue: hero.venue };
+}

@@ -2,8 +2,6 @@ import { Cormorant_Infant, Montserrat } from "next/font/google";
 
 import Navbar from "@/components/shared/Navbar";
 
-import type { Metadata } from "next";
-
 import "./globals.css";
 
 const cormorantInfant = Cormorant_Infant({
@@ -21,12 +19,6 @@ const montserrat = Montserrat({
   display: "swap",
   variable: "--font-body",
 });
-
-export const metadata: Metadata = {
-  title: "FORMA 2026 — Architecture & Built Environment Summit",
-  description:
-    "FORMA 2026 is a three-day architecture and built environment conference bringing together industry leaders, innovators, and visionaries.",
-};
 
 export default function RootLayout({
   children,

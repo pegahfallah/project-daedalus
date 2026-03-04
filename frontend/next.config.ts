@@ -1,12 +1,16 @@
 import type { NextConfig } from "next";
 
+const directusUrl = new URL(
+  process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055",
+);
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "8055",
+        protocol: directusUrl.protocol.replace(":", "") as "http" | "https",
+        hostname: directusUrl.hostname,
+        port: directusUrl.port,
         pathname: "/assets/**",
       },
     ],

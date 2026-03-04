@@ -1,4 +1,4 @@
-import type { components } from "../../types.d";
+import type { components } from "@/types/directus.d";
 
 export type DirectusFile = components["schemas"]["Files"];
 export type Hero = components["schemas"]["ItemsHero"];

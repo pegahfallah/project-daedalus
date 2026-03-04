@@ -1,11 +1,11 @@
-import { getFooter, getHero } from "@/lib/api";
+import { getFooter, getSiteInfo } from "@/lib/api";
 
 import Button from "./shared/Button";
 
 export default async function Footer() {
-  let footer, hero;
+  let footer, siteInfo;
   try {
-    [footer, hero] = await Promise.all([getFooter(), getHero()]);
+    [footer, siteInfo] = await Promise.all([getFooter(), getSiteInfo()]);
   } catch {
     return null;
   }
@@ -45,8 +45,8 @@ export default async function Footer() {
               FORMA <span className="text-accent">2026</span>
             </span>
             <div className="detail text-gray-400 mt-3 flex flex-col gap-1">
-              <span>{hero.dates}</span>
-              <span>{hero.venue}</span>
+              <span>{siteInfo.dates}</span>
+              <span>{siteInfo.venue}</span>
             </div>
           </div>
 

@@ -1,5 +1,5 @@
 {
-  "name": "frontend-temp",
+  "name": "forma-2026",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typegen": "npx openapi-typescript@6 http://localhost:8055/server/specs/oas --output types.d.ts"
+    "typegen": "npx openapi-typescript@6 http://localhost:8055/server/specs/oas --output src/types/directus.d.ts"
   },
   "dependencies": {
     "next": "16.1.6",
