@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorantInfant.variable} ${montserrat.variable}`}
+      className={`${cormorantInfant.variable} ${montserrat.variable} scroll-smooth`}
     >
       <body>
         <Navbar />

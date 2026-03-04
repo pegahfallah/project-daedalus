@@ -18,7 +18,7 @@ export default async function Speakers() {
   }
 
   return (
-    <Section bg="dark">
+    <Section id="speakers" bg="dark">
       <SectionHeader
         label={section.label}
         heading={section.heading}

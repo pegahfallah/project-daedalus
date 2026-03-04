@@ -17,7 +17,7 @@ export default async function Footer() {
   ].filter((s) => s.url);
 
   return (
-    <footer className="bg-black px-6 md:px-16 lg:px-32 xl:px-64">
+    <footer id="contact" className="bg-black px-6 md:px-16 lg:px-32 xl:px-64">
       {/* CTA block */}
       <div className="flex flex-col items-center py-16 md:py-32 gap-8">
         <p className="footer-heading text-white max-w-3xl">

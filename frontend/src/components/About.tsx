@@ -18,7 +18,7 @@ export default async function About() {
   ].filter((s) => s.value);
 
   return (
-    <Section>
+    <Section id="about">
       <SectionHeader label={about.label} heading={about.heading} />
 
       <div className="flex flex-col md:flex-row gap-12 md:gap-16">

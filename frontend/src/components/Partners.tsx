@@ -26,7 +26,7 @@ export default async function Partners() {
   })).filter((t) => t.partners.length > 0);
 
   return (
-    <Section bg="alt">
+    <Section id="partners" bg="alt">
       <SectionHeader label={section.label} heading={section.heading} />
 
       <div className="flex flex-col gap-12 md:gap-16">

@@ -16,7 +16,7 @@ export default async function Navbar() {
   const cta = items.find((item: Navigation) => item.is_cta);
 
   return (
-    <nav className="z-nav fixed top-0 left-0 right-0 w-full bg-bg/92 border-b border-border px-5 md:px-16 lg:px-32 xl:px-64 transition-all duration-normal ease-brand-in-out">
+    <nav className="z-nav w-full bg-bg border-b border-border px-5 md:px-16 lg:px-32 xl:px-64">
       <div className="flex items-center justify-between h-[52px] md:h-[88px]">
         <Link
           href="/"

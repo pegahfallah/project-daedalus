@@ -14,7 +14,7 @@ export default async function Hero() {
   }
 
   return (
-    <section className="relative w-full h-[667px] md:h-screen flex items-end overflow-hidden">
+    <section id="hero" className="relative w-full h-[667px] md:h-screen flex items-end overflow-hidden">
       {hero.image && (
         <Image
           src={assetUrl(hero.image)}
