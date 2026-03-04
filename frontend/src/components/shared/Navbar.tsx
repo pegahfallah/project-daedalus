@@ -5,7 +5,12 @@ import MobileMenu from "./MobileMenu";
 import Link from "next/link";
 
 export default async function Navbar() {
-  const items = await getNavigation();
+  let items;
+  try {
+    items = await getNavigation();
+  } catch {
+    return null;
+  }
 
   const links = items.filter((item: Navigation) => !item.is_cta);
   const cta = items.find((item: Navigation) => item.is_cta);

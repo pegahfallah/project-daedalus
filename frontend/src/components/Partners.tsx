@@ -6,10 +6,15 @@ import type { Partner } from "@/lib/types";
 import SectionHeader from "./shared/SectionHeader";
 
 export default async function Partners() {
-  const [section, partners] = await Promise.all([
-    getPartnersSection(),
-    getPartners(),
-  ]);
+  let section, partners;
+  try {
+    [section, partners] = await Promise.all([
+      getPartnersSection(),
+      getPartners(),
+    ]);
+  } catch {
+    return null;
+  }
 
   const tiers = TIER_ORDER
     .map((tier) => ({

@@ -2,7 +2,12 @@ import { getFooter, getHero } from "@/lib/api";
 import Button from "./shared/Button";
 
 export default async function Footer() {
-  const [footer, hero] = await Promise.all([getFooter(), getHero()]);
+  let footer, hero;
+  try {
+    [footer, hero] = await Promise.all([getFooter(), getHero()]);
+  } catch {
+    return null;
+  }
 
   const socials = [
     { label: "Twitter / X", mobileLabel: "X", url: footer.twitter_url },

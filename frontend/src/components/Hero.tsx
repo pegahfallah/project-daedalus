@@ -4,7 +4,12 @@ import { assetUrl } from "@/lib/directus";
 import Button from "./shared/Button";
 
 export default async function Hero() {
-  const hero = await getHero();
+  let hero;
+  try {
+    hero = await getHero();
+  } catch {
+    return null;
+  }
 
   return (
     <section className="relative w-full h-[667px] md:h-screen flex items-end overflow-hidden">
@@ -22,7 +27,10 @@ export default async function Hero() {
 
       <div className="relative z-above w-full px-6 md:px-16 lg:px-32 xl:px-64 pb-16 md:pb-24 flex flex-col gap-6">
         <span className="subheading text-white/80">
-          {hero.subtitle}
+          <span className="md:hidden">
+            {hero.subtitle_mobile ?? hero.subtitle}
+          </span>
+          <span className="hidden md:inline">{hero.subtitle}</span>
         </span>
 
         <h1 className="h1-display text-white">

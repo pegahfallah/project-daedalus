@@ -2,7 +2,12 @@ import { getAbout } from "@/lib/api";
 import SectionHeader from "./shared/SectionHeader";
 
 export default async function About() {
-  const about = await getAbout();
+  let about;
+  try {
+    about = await getAbout();
+  } catch {
+    return null;
+  }
 
   const stats = [
     { value: about.stat_1_value, label: about.stat_1_label },
