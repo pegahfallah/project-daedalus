@@ -39,11 +39,7 @@ export default async function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center">
-          {cta && (
-            <Button href={cta.url ?? "#"}>
-              {cta.label}
-            </Button>
-          )}
+          {cta && <Button href={cta.url ?? "#"}>{cta.label}</Button>}
         </div>
 
         <MobileMenu links={links} cta={cta} />

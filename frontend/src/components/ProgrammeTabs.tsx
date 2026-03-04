@@ -1,53 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+
 import {
   SESSION_TYPE_COLORS,
   SESSION_TYPE_COLOR_DEFAULT,
 } from "@/lib/constants";
-import type {
-  ScheduleDay,
-  Session,
-  SessionSpeaker,
-  Speaker,
-} from "@/lib/types";
+import { formatDate, formatTime, getSpeakerNames } from "@/lib/format";
 
-function formatTime(time: string | null | undefined): string {
-  if (!time) return "";
-  return time.slice(0, 5);
-}
-
-function formatDate(date: string | null | undefined): {
-  short: string;
-  long: string;
-} {
-  if (!date) return { short: "", long: "" };
-  const d = new Date(date + "T00:00:00");
-  const day = d.getDate();
-  const monthShort = d
-    .toLocaleDateString("en-GB", { month: "short" })
-    .toUpperCase();
-  const monthLong = d
-    .toLocaleDateString("en-GB", { month: "long" })
-    .toUpperCase();
-  return { short: `${day} ${monthShort}`, long: `${day} ${monthLong}` };
-}
-
-function getSpeakerNames(session: Session): string {
-  if (!session.speakers || !Array.isArray(session.speakers)) return "";
-  return session.speakers
-    .map((entry) => {
-      if (typeof entry === "string") return "";
-      const speaker = (entry as SessionSpeaker).speakers_id;
-      if (!speaker || typeof speaker === "string") return "";
-      return (speaker as Speaker).name ?? "";
-    })
-    .filter(Boolean)
-    .join(", ");
-}
+import type { ScheduleDay, Session } from "@/lib/types";
 
 function getTypeColor(type: string | null | undefined): string {
-  return SESSION_TYPE_COLORS[type?.toLowerCase() ?? ""] ?? SESSION_TYPE_COLOR_DEFAULT;
+  return (
+    SESSION_TYPE_COLORS[type?.toLowerCase() ?? ""] ?? SESSION_TYPE_COLOR_DEFAULT
+  );
 }
 
 interface ProgrammeTabsProps {
@@ -56,23 +22,57 @@ interface ProgrammeTabsProps {
 
 export default function ProgrammeTabs({ days }: ProgrammeTabsProps) {
   const [activeDay, setActiveDay] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const currentDay = days[activeDay];
   const sessions = (currentDay?.sessions ?? []).filter(
-    (s): s is Session => typeof s !== "string"
+    (s): s is Session => typeof s !== "string",
   );
+
+  function handleTabKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
+    let nextIndex: number | null = null;
+
+    if (e.key === "ArrowRight") {
+      nextIndex = activeDay < days.length - 1 ? activeDay + 1 : 0;
+    } else if (e.key === "ArrowLeft") {
+      nextIndex = activeDay > 0 ? activeDay - 1 : days.length - 1;
+    } else if (e.key === "Home") {
+      nextIndex = 0;
+    } else if (e.key === "End") {
+      nextIndex = days.length - 1;
+    }
+
+    if (nextIndex !== null) {
+      e.preventDefault();
+      setActiveDay(nextIndex);
+      tabRefs.current[nextIndex]?.focus();
+    }
+  }
 
   return (
     <>
       {/* Day tabs */}
-      <div className="flex border-b border-border">
+      <div
+        role="tablist"
+        aria-label="Schedule days"
+        className="flex border-b border-border"
+      >
         {days.map((day, i) => {
           const date = formatDate(day.date);
           const isActive = i === activeDay;
           return (
             <button
               key={day.id}
+              ref={(el) => {
+                tabRefs.current[i] = el;
+              }}
+              role="tab"
+              aria-selected={isActive}
+              aria-controls={`tabpanel-${day.id}`}
+              id={`tab-${day.id}`}
+              tabIndex={isActive ? 0 : -1}
               onClick={() => setActiveDay(i)}
+              onKeyDown={handleTabKeyDown}
               className={`bg-transparent border-0 border-b-2 border-solid cursor-pointer h-20 px-4 md:px-6 -mb-px transition-colors duration-fast text-center ${
                 isActive ? "border-b-accent" : "border-b-transparent"
               }`}
@@ -99,7 +99,12 @@ export default function ProgrammeTabs({ days }: ProgrammeTabsProps) {
       </div>
 
       {/* Sessions */}
-      <div className="mt-8 md:mt-12">
+      <div
+        role="tabpanel"
+        id={`tabpanel-${currentDay?.id}`}
+        aria-labelledby={`tab-${currentDay?.id}`}
+        className="mt-8 md:mt-12"
+      >
         {sessions.map((session) => {
           const speakerNames = getSpeakerNames(session);
           return (
@@ -113,9 +118,7 @@ export default function ProgrammeTabs({ days }: ProgrammeTabsProps) {
                   {formatTime(session.start_time)}
                 </span>
                 <div className="flex flex-col gap-1.5">
-                  <span className="h3-small text-text">
-                    {session.title}
-                  </span>
+                  <span className="h3-small text-text">{session.title}</span>
                   {speakerNames && (
                     <span className="session-meta text-text-secondary">
                       {speakerNames}

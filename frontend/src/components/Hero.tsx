@@ -1,6 +1,8 @@
 import Image from "next/image";
+
 import { getHero } from "@/lib/api";
 import { assetUrl } from "@/lib/directus";
+
 import Button from "./shared/Button";
 
 export default async function Hero() {
@@ -16,9 +18,10 @@ export default async function Hero() {
       {hero.image && (
         <Image
           src={assetUrl(hero.image)}
-          alt=""
+          alt={hero.title ?? "FORMA 2026 conference"}
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
       )}
@@ -33,17 +36,16 @@ export default async function Hero() {
           <span className="hidden md:inline">{hero.subtitle}</span>
         </span>
 
-        <h1 className="h1-display text-white">
-          {hero.title}
-        </h1>
+        <h1 className="h1-display text-white">{hero.title}</h1>
 
-        <p className="tagline text-white/80">
-          {hero.tagline}
-        </p>
+        <p className="tagline text-white/80">{hero.tagline}</p>
 
         <div className="detail text-white/70 mt-2 flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
           <span>{hero.dates}</span>
-          <span className="hidden md:block w-px h-4 bg-white/40" />
+          <span
+            className="hidden md:block w-px h-4 bg-white/40"
+            aria-hidden="true"
+          />
           <span>{hero.venue}</span>
         </div>
 

@@ -1,4 +1,6 @@
 import { getAbout } from "@/lib/api";
+
+import Section from "./shared/Section";
 import SectionHeader from "./shared/SectionHeader";
 
 export default async function About() {
@@ -16,7 +18,7 @@ export default async function About() {
   ].filter((s) => s.value);
 
   return (
-    <section className="bg-bg px-6 md:px-16 lg:px-32 xl:px-64 py-24 md:py-32">
+    <Section>
       <SectionHeader label={about.label} heading={about.heading} />
 
       <div className="flex flex-col md:flex-row gap-12 md:gap-16">
@@ -38,6 +40,6 @@ export default async function About() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

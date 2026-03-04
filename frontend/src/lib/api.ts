@@ -31,7 +31,7 @@ export function getSpeakersSection() {
 
 export function getSpeakers() {
   return directusFetch<Speaker[]>(
-    "/items/speakers?fields=*,headshot.*&sort=sort&filter[status][_eq]=published"
+    "/items/speakers?fields=*,headshot.*&sort=sort&filter[status][_eq]=published",
   );
 }
 
@@ -41,7 +41,7 @@ export function getProgrammeSection() {
 
 export function getScheduleDays() {
   return directusFetch<ScheduleDay[]>(
-    "/items/schedule_days?fields=*,sessions.*,sessions.speakers.speakers_id.*&sort=sort&deep[sessions][_sort]=start_time"
+    "/items/schedule_days?fields=*,sessions.*,sessions.speakers.speakers_id.*&sort=sort&deep[sessions][_sort]=start_time",
   );
 }
 
@@ -51,7 +51,7 @@ export function getPartnersSection() {
 
 export function getPartners() {
   return directusFetch<Partner[]>(
-    "/items/partners?fields=*,logo.*&sort=sort&filter[status][_eq]=published"
+    "/items/partners?fields=*,logo.*&sort=sort&filter[status][_eq]=published",
   );
 }
 

@@ -1,4 +1,5 @@
 import { getFooter, getHero } from "@/lib/api";
+
 import Button from "./shared/Button";
 
 export default async function Footer() {
@@ -49,11 +50,13 @@ export default async function Footer() {
             </div>
           </div>
 
-          <nav className="flex items-center gap-8">
+          <nav aria-label="Social links" className="flex items-center gap-8">
             {socials.map((social) => (
               <a
                 key={social.label}
                 href={social.url ?? "#"}
+                rel="noopener noreferrer"
+                target="_blank"
                 className="speaker-company text-gray-400 no-underline hover:text-white transition-colors duration-fast"
               >
                 <span className="md:hidden">{social.mobileLabel}</span>

@@ -14,7 +14,7 @@ export class DirectusError extends Error {
   constructor(
     message: string,
     public readonly status?: number,
-    public readonly url?: string
+    public readonly url?: string,
   ) {
     super(message);
     this.name = "DirectusError";
@@ -27,11 +27,11 @@ export async function directusFetch<T>(path: string): Promise<T> {
   let res: Response;
   try {
     res = await fetch(url, { next: { revalidate: 60 } });
-  } catch (err) {
+  } catch {
     throw new DirectusError(
       `Network error: unable to reach Directus at ${url}`,
       undefined,
-      url
+      url,
     );
   }
 
@@ -39,7 +39,7 @@ export async function directusFetch<T>(path: string): Promise<T> {
     throw new DirectusError(
       `Directus responded with ${res.status} ${res.statusText}`,
       res.status,
-      url
+      url,
     );
   }
 
@@ -47,14 +47,18 @@ export async function directusFetch<T>(path: string): Promise<T> {
   try {
     json = await res.json();
   } catch {
-    throw new DirectusError("Invalid JSON response from Directus", res.status, url);
+    throw new DirectusError(
+      "Invalid JSON response from Directus",
+      res.status,
+      url,
+    );
   }
 
   if (json.errors?.length) {
     throw new DirectusError(
       `Directus error: ${json.errors[0].message}`,
       res.status,
-      url
+      url,
     );
   }
 

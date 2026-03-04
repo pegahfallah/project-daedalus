@@ -1,7 +1,10 @@
 import { getSpeakersSection, getSpeakers } from "@/lib/api";
-import type { Speaker } from "@/lib/types";
+
 import SpeakerCard from "./SpeakerCard";
+import Section from "./shared/Section";
 import SectionHeader from "./shared/SectionHeader";
+
+import type { Speaker } from "@/lib/types";
 
 export default async function Speakers() {
   let section, speakers;
@@ -15,7 +18,7 @@ export default async function Speakers() {
   }
 
   return (
-    <section className="bg-black px-6 md:px-16 lg:px-32 xl:px-64 py-24 md:py-32">
+    <Section bg="dark">
       <SectionHeader
         label={section.label}
         heading={section.heading}
@@ -27,6 +30,6 @@ export default async function Speakers() {
           <SpeakerCard key={speaker.id} speaker={speaker} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

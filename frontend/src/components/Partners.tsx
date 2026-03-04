@@ -1,9 +1,13 @@
 import Image from "next/image";
+
 import { getPartnersSection, getPartners } from "@/lib/api";
 import { TIER_ORDER, TIER_GRID_COLS } from "@/lib/constants";
 import { assetUrl } from "@/lib/directus";
-import type { Partner } from "@/lib/types";
+
+import Section from "./shared/Section";
 import SectionHeader from "./shared/SectionHeader";
+
+import type { Partner } from "@/lib/types";
 
 export default async function Partners() {
   let section, partners;
@@ -16,17 +20,13 @@ export default async function Partners() {
     return null;
   }
 
-  const tiers = TIER_ORDER
-    .map((tier) => ({
-      name: tier,
-      partners: partners.filter(
-        (p: Partner) => p.tier?.toLowerCase() === tier
-      ),
-    }))
-    .filter((t) => t.partners.length > 0);
+  const tiers = TIER_ORDER.map((tier) => ({
+    name: tier,
+    partners: partners.filter((p: Partner) => p.tier?.toLowerCase() === tier),
+  })).filter((t) => t.partners.length > 0);
 
   return (
-    <section className="bg-bg-alt px-6 md:px-16 lg:px-32 xl:px-64 py-24 md:py-32">
+    <Section bg="alt">
       <SectionHeader label={section.label} heading={section.heading} />
 
       <div className="flex flex-col gap-12 md:gap-16">
@@ -47,8 +47,9 @@ export default async function Partners() {
                     <div className="relative h-12 md:h-16">
                       <Image
                         src={assetUrl(partner.logo)}
-                        alt={partner.name ?? ""}
+                        alt={partner.name ?? "Partner logo"}
                         fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
                         className="object-contain object-left"
                       />
                     </div>
@@ -59,6 +60,6 @@ export default async function Partners() {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

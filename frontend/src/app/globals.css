@@ -25,13 +25,13 @@
   --color-accent-hover: #d4551f;
   --color-border: #e0ddd8;
   --color-surface: #ffffff;
-  --color-type-workshop: #6B5A8E;
-  --color-type-panel: #5A7A6C;
+  --color-type-workshop: #6b5a8e;
+  --color-type-panel: #5a7a6c;
 
   /* Font families */
-  --font-heading: 'Cormorant Infant', Georgia, 'Times New Roman', serif;
-  --font-body: 'Montserrat', -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  --font-heading: "Cormorant Infant", Georgia, "Times New Roman", serif;
+  --font-body: "Montserrat", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", monospace;
 
   /* Font sizes */
   --text-xs: 0.75rem;
@@ -88,10 +88,9 @@
   --ease-brand-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-
 /* Hero title — desktop: 120px, mobile: 60px */
 .h1-display {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
   font-weight: var(--font-light);
   font-size: 3.75rem;
   line-height: var(--leading-none);
@@ -106,7 +105,7 @@
 
 /* Section heading — desktop: 64px, mobile: 36px */
 .h2-section {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
   font-weight: var(--font-light);
   font-size: 2.25rem;
   line-height: 1.15;
@@ -123,7 +122,7 @@
 
 /* Hero tagline — 28px / 39.2px line-height */
 .tagline {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
   font-weight: var(--font-light);
   font-size: 1.25rem;
   line-height: 1.4;
@@ -138,7 +137,7 @@
 
 /* Detail text — date, location */
 .detail {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-regular);
   font-size: var(--text-sm);
   line-height: var(--leading-none);
@@ -154,7 +153,7 @@
 
 /* Subheading — small uppercase label */
 .subheading {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-medium);
   font-size: 11px;
   line-height: var(--leading-none);
@@ -171,7 +170,7 @@
 
 /* Tab date — mobile: 10px/1px, desktop: 12px/1.8px */
 .tab-date {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-medium);
   font-size: 10px;
   line-height: var(--leading-none);
@@ -188,7 +187,7 @@
 
 /* Tab title — mobile: 13px, desktop uses .detail */
 .tab-title {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: 13px;
   line-height: var(--leading-none);
 }
@@ -202,7 +201,7 @@
 
 /* Button text */
 .btn-text {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-semibold);
   font-size: 13px;
   line-height: var(--leading-none);
@@ -219,7 +218,7 @@
 
 /* Footer heading — mobile: 28px, desktop: 48px */
 .footer-heading {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
   font-weight: var(--font-light);
   font-size: 1.75rem;
   line-height: 1.2;
@@ -237,7 +236,7 @@
 
 /* Body text — mobile: 15px, desktop: 17px */
 .body-text {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-regular);
   font-size: 15px;
   line-height: 1.7;
@@ -252,7 +251,7 @@
 
 /* Stat number — mobile: 48px, desktop: 72px */
 .stat-number {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
   font-weight: var(--font-light);
   font-size: 3rem;
   line-height: var(--leading-none);
@@ -267,7 +266,7 @@
 
 /* Heading small — mobile: 18px, desktop: 24px */
 .h3-small {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
   font-weight: var(--font-regular);
   font-size: var(--text-md);
   line-height: 1.3;
@@ -282,7 +281,7 @@
 
 /* Speaker role — mobile: 12px, desktop: 15px */
 .speaker-role {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-regular);
   font-size: var(--text-xs);
   line-height: var(--leading-none);
@@ -297,7 +296,7 @@
 
 /* Speaker company — mobile: 11px/0.55px, desktop: 14px/0.7px */
 .speaker-company {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-medium);
   font-size: 11px;
   line-height: var(--leading-none);
@@ -313,7 +312,7 @@
 
 /* Nav link */
 .nav-link {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-medium);
   font-size: var(--text-sm);
   line-height: var(--leading-none);
@@ -323,7 +322,7 @@
 
 /* Logo type */
 .logo-type {
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
   font-weight: var(--font-semibold);
   font-size: var(--text-md);
   line-height: var(--leading-none);
@@ -333,7 +332,7 @@
 
 /* Session time — mobile: 15px, desktop: 18px */
 .session-time {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-regular);
   font-size: 15px;
   line-height: var(--leading-none);
@@ -348,7 +347,7 @@
 
 /* Session meta — mobile: 13px, desktop: 15px */
 .session-meta {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-regular);
   font-size: 13px;
   line-height: var(--leading-none);
@@ -363,7 +362,7 @@
 
 /* Session type label — mobile: 10px/1.2px, desktop uses .subheading */
 .session-type {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-semibold);
   font-size: 10px;
   line-height: var(--leading-none);
@@ -381,7 +380,7 @@
 
 /* Session room — mobile: 12px, desktop: 16px */
 .session-room {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: var(--font-regular);
   font-size: var(--text-xs);
   line-height: var(--leading-none);
@@ -401,6 +400,11 @@ body {
   font-family: var(--font-body);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
