@@ -86,11 +86,6 @@
   --ease-brand-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* ——————————————————————————————————————
-   Typography utility classes
-   Reference design tokens directly for
-   Figma-exact values outside the scale.
-   —————————————————————————————————————— */
 
 /* Hero title — desktop: 120px, mobile: 60px */
 .h1-display {
@@ -104,6 +99,23 @@
 @media (min-width: 768px) {
   .h1-display {
     font-size: 7.5rem;
+  }
+}
+
+/* Section heading — desktop: 64px, mobile: 36px */
+.h2-section {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-light);
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .h2-section {
+    font-size: 4rem;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
   }
 }
 
@@ -169,6 +181,36 @@
   .btn-text {
     font-size: 15px;
     letter-spacing: 1.5px;
+  }
+}
+
+/* Body text — mobile: 15px, desktop: 17px */
+.body-text {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  .body-text {
+    font-size: 17px;
+  }
+}
+
+/* Stat number — mobile: 48px, desktop: 72px */
+.stat-number {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-light);
+  font-size: 3rem;
+  line-height: var(--leading-none);
+  letter-spacing: var(--tracking-tight);
+}
+
+@media (min-width: 768px) {
+  .stat-number {
+    font-size: 4.5rem;
   }
 }
 
