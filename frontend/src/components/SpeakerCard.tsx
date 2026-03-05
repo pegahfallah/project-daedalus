@@ -14,7 +14,7 @@ export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
             alt={speaker.name ? `Photo of ${speaker.name}` : "Speaker photo"}
             fill
             sizes="(max-width: 768px) 50vw, 33vw"
-            className="object-cover"
+            className="object-cover transition-transform duration-500 ease-out hover:scale-105"
           />
         </div>
       )}

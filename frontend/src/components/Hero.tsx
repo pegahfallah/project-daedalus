@@ -3,6 +3,8 @@ import Image from "next/image";
 import { getHero } from "@/lib/api";
 import { assetUrl } from "@/lib/directus";
 
+import HeroParallax from "./animations/HeroParallax";
+import HeroTextReveal from "./animations/HeroTextReveal";
 import Button from "./shared/Button";
 
 export default async function Hero() {
@@ -14,6 +16,7 @@ export default async function Hero() {
   }
 
   return (
+    <HeroParallax>
     <section id="hero" className="relative w-full h-[667px] md:h-screen flex items-end overflow-hidden">
       {hero.image && (
         <Image
@@ -28,7 +31,7 @@ export default async function Hero() {
 
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-above w-full px-6 md:px-16 lg:px-32 xl:px-64 pb-16 md:pb-24 flex flex-col gap-6">
+      <HeroTextReveal className="relative z-above w-full px-6 md:px-16 lg:px-32 xl:px-64 pb-16 md:pb-24 flex flex-col gap-6">
         <span className="subheading text-white/80">
           <span className="md:hidden">
             {hero.subtitle_mobile ?? hero.subtitle}
@@ -54,7 +57,8 @@ export default async function Hero() {
             {hero.cta_label}
           </Button>
         )}
-      </div>
+      </HeroTextReveal>
     </section>
+    </HeroParallax>
   );
 }

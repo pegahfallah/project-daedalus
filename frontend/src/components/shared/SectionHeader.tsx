@@ -1,3 +1,4 @@
+import FadeIn from "../animations/FadeIn";
 import Divider from "./Divider";
 
 interface SectionHeaderProps {
@@ -12,12 +13,12 @@ export default function SectionHeader({
   headingColor = "text-text",
 }: SectionHeaderProps) {
   return (
-    <>
+    <FadeIn>
       <span className="subheading text-accent">{label}</span>
       <h2 className={`h2-section mt-4 max-w-[800px] ${headingColor}`}>
         {heading}
       </h2>
       <Divider className="my-8" />
-    </>
+    </FadeIn>
   );
 }

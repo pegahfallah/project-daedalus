@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { getPartnersSection, getPartners } from "@/lib/api";
-import { TIER_ORDER, TIER_GRID_COLS } from "@/lib/constants";
+import { TIER_ORDER } from "@/lib/constants";
 import { assetUrl } from "@/lib/directus";
 
 import Section from "./shared/Section";
@@ -36,7 +36,7 @@ export default async function Partners() {
               {tier.name} Partners
             </span>
 
-            <div className={`grid ${TIER_GRID_COLS[tier.name]} gap-6 md:gap-8`}>
+            <div className="grid grid-cols-2 md:flex md:flex-wrap gap-6 md:gap-12">
               {tier.partners.map((partner: Partner) => (
                 <a
                   key={partner.id}
@@ -44,12 +44,12 @@ export default async function Partners() {
                   className="no-underline"
                 >
                   {partner.logo && (
-                    <div className="relative h-12 md:h-16">
+                    <div className="relative h-12 md:w-[200px] md:h-16">
                       <Image
                         src={assetUrl(partner.logo)}
                         alt={partner.name ?? "Partner logo"}
                         fill
-                        sizes="(max-width: 768px) 50vw, 25vw"
+                        sizes="200px"
                         className="object-contain object-left"
                       />
                     </div>

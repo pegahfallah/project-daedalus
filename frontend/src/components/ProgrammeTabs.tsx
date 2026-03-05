@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
+import { gsap } from "@/lib/gsap";
 import { formatDate } from "@/lib/format";
 
 import SessionRow from "./SessionRow";
@@ -15,6 +16,25 @@ interface ProgrammeTabsProps {
 export default function ProgrammeTabs({ days }: ProgrammeTabsProps) {
   const [activeDay, setActiveDay] = useState(0);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    gsap.fromTo(
+      panel,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: "power1.inOut" },
+    );
+  }, [activeDay]);
 
   const currentDay = days[activeDay];
   const sessions = (currentDay?.sessions ?? []).filter(
@@ -92,6 +112,7 @@ export default function ProgrammeTabs({ days }: ProgrammeTabsProps) {
 
       {/* Sessions */}
       <div
+        ref={panelRef}
         role="tabpanel"
         id={`tabpanel-${currentDay?.id}`}
         aria-labelledby={`tab-${currentDay?.id}`}

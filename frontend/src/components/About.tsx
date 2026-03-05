@@ -1,5 +1,6 @@
 import { getAbout } from "@/lib/api";
 
+import AnimatedStats from "./animations/AnimatedStats";
 import Section from "./shared/Section";
 import SectionHeader from "./shared/SectionHeader";
 
@@ -26,19 +27,7 @@ export default async function About() {
           {about.body}
         </div>
 
-        <div className="flex flex-col gap-8 md:gap-10 md:ml-auto">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="border-l border-border pl-6 md:pl-8"
-            >
-              <span className="stat-number text-text block">{stat.value}</span>
-              <span className="subheading text-text-muted mt-2 block">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
+        <AnimatedStats stats={stats} />
       </div>
     </Section>
   );
