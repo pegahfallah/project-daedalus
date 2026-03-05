@@ -1,0 +1,161 @@
+/*
+ * FORMA 2026 — Design Tokens
+ *
+ * Fonts:
+ *   Headings: Cormorant Infant (Google Fonts)
+ *   Body:     Montserrat (Google Fonts)
+ *
+ * Add this to your HTML <head>:
+ *
+ *   <link rel="preconnect" href="https://fonts.googleapis.com">
+ *   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ *   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+ *
+ * Or import in CSS:
+ *
+ *   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+ */
+
+:root {
+  /* ——————————————————————————————————————
+     Colors
+     —————————————————————————————————————— */
+
+  /* Primary */
+  --color-black: #1a1a1a;
+  --color-white: #faf9f7;
+  --color-orange: #e8622a;
+  --color-orange-hover: #d4551f;
+
+  /* Neutrals */
+  --color-gray-900: #2d2d2d;
+  --color-gray-800: #3d3d3d;
+  --color-gray-700: #4a4a4a;
+  --color-gray-600: #6b6b6b;
+  --color-gray-500: #8a8a8a;
+  --color-gray-400: #a3a3a3;
+  --color-gray-300: #c4c4c4;
+  --color-gray-200: #e0ddd8;
+  --color-gray-100: #eeece7;
+
+  /* Semantic */
+  --color-bg: var(--color-white);
+  --color-bg-alt: var(--color-gray-100);
+  --color-text: var(--color-black);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-500);
+  --color-accent: var(--color-orange);
+  --color-accent-hover: var(--color-orange-hover);
+  --color-border: var(--color-gray-200);
+  --color-surface: #ffffff;
+
+  /* ——————————————————————————————————————
+     Typography
+     —————————————————————————————————————— */
+
+  --font-family-heading: "Cormorant Infant", Georgia, "Times New Roman", serif;
+  --font-family:
+    "Montserrat", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "SF Mono", "Fira Code", "Fira Mono", monospace;
+
+  /* Font Sizes — modular scale */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-md: 1.125rem; /* 18px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 1.5rem; /* 24px */
+  --text-2xl: 2rem; /* 32px */
+  --text-3xl: 2.5rem; /* 40px */
+  --text-4xl: 3.5rem; /* 56px */
+  --text-5xl: 4.5rem; /* 72px */
+  --text-6xl: 6rem; /* 96px */
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.2em;
+
+  /* ——————————————————————————————————————
+     Spacing
+     —————————————————————————————————————— */
+
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+  --space-32: 8rem; /* 128px */
+
+  /* Section padding */
+  --section-padding-y: var(--space-24);
+  --section-padding-y-mobile: var(--space-16);
+
+  /* ——————————————————————————————————————
+     Layout
+     —————————————————————————————————————— */
+
+  --max-width: 1200px;
+  --max-width-narrow: 800px;
+  --container-padding: var(--space-6);
+
+  /* ——————————————————————————————————————
+     Borders & Radius
+     —————————————————————————————————————— */
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  --border-width: 1px;
+
+  /* ——————————————————————————————————————
+     Shadows
+     —————————————————————————————————————— */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* ——————————————————————————————————————
+     Transitions
+     —————————————————————————————————————— */
+
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ——————————————————————————————————————
+     Z-Index Scale
+     —————————————————————————————————————— */
+
+  --z-base: 0;
+  --z-above: 10;
+  --z-nav: 100;
+  --z-overlay: 1000;
+}
